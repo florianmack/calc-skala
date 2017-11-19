@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Informationen</h1>
+<div mat-dialog-content>
+  <div *ngFor="let info of data.gradeInfo">
+    <h3>{{info.grade}}</h3>
+    <p *ngFor="let descr of info.descr">
+      <span>{{descr}}</span>
+    </p>
+    <br>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Schließen</button>
+</div>

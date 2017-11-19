@@ -1,0 +1,29 @@
+.app-calc-skala-host {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   overflow-y: auto;
+}
+
+.calc-skala {
+   margin: auto;
+   max-width: 800px;
+   height: 100%;
+   min-height: fit-content;
+}
+
+.calc-grade {
+   font-size: 24px;
+}
+
+.full-width {
+   width: 100%;
+}
+
+.mat-select-panel {
+   max-height: 512px !important;
+}
+
+.mat-card-actions {
+   display: flex !important;
+}

@@ -1,0 +1,50 @@
+<mat-card class="calc-skala">
+  <mat-card-title>
+    <mat-form-field class="full-width">
+      <mat-select placeholder="Jahrgang" [(value)]="y">
+        <mat-option *ngFor="let year of years" [value]="year.key">
+          {{ year.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-form-field class="full-width">
+      <mat-select placeholder="Listening" [(value)]="g1">
+        <mat-option *ngFor="let grade of grades" [value]="grade.key">
+          {{ grade.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-select placeholder="English in use" [(value)]="g2">
+        <mat-option *ngFor="let grade of grades" [value]="grade.key">
+          {{ grade.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-select placeholder="Reading" [(value)]="g3">
+        <mat-option *ngFor="let grade of grades" [value]="grade.key">
+          {{ grade.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-select placeholder="Writing" [(value)]="g4">
+        <mat-option *ngFor="let grade of grades" [value]="grade.key">
+          {{ grade.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br><br>
+    <p class="calc-grade">
+      <span><strong>Note: </strong>{{calc(y, g1, g2, g3, g4)}}</span>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <span class="spacer"></span>
+    <button mat-button *ngIf="y" (click)="info()">Info</button>
+    <button mat-button (click)="clear()">Löschen</button>
+  </mat-card-actions>
+</mat-card>
