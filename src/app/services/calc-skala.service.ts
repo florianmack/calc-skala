@@ -53,154 +53,115 @@ export class CalcSkalaService {
   }
 
   private calcSehrGut(y: number, g: number[]) {
-    // Mindestens zweimal eine 4.0 Bewertung - der Rest ist 3.0
-    const list = g.filter(item => item >= 3);
-    if (list.length === 4) {
-      return list.filter(item => item === 4).length >= 2;
-    }
-    return false;
-  }
+    // 4x >= 3.0 und 2x >= 4.0
+    return this.filter(g, 4, 3) && this.filter(g, 2, 4);
+}
 
   private calcGut(y: number, g: number[]) {
-    // Mindestens dreimal 3.0 oder höher - höchstens einmal 2.0
-    const list = g.filter(item => item >= 2);
-    if (list.length === 4) {
-      return list.filter(item => item >= 3).length >= 3;
-    }
-    return false;
+    // 4x >= 2.0 und 3x >= 3.0
+    return this.filter(g, 4, 2) && this.filter(g, 3, 3);
   }
 
   private calcBefriedigendV(y: number, g: number[]) {
-    if (y === 3 || y === 4) {
-      // Einmal 1.0 - der Rest mindestens 3.0 oder höher
-      if (g.filter(item => item === 1).length === 1) {
-        return g.filter(item => item >= 3).length >= 3;
-      }
-      // Zweimal 2.0 - der Rest mindestens 3.0 oder höher
-      if (g.filter(item => item === 2).length === 2) {
-        return g.filter(item => item >= 3).length >= 2;
-      }
-      // Dreimal 2.0 - der Rest mindestens 3.0 oder höher
-      if (g.filter(item => item === 2).length === 3) {
-        return g.filter(item => item >= 3).length >= 1;
-      }
+    if (y < 3) {
+      return false;
     }
-    return false;
+    // 4x >= 1.0 und 3x >= 3.0
+    if (this.filter(g, 4, 1) && this.filter(g, 3, 3)) {
+      return true;
+    }
+    // 4x >= 2.0 und 1x >= 3.0
+    return this.filter(g, 4, 2) && this.filter(g, 1, 3);
   }
 
   private calcGenuegendV(y: number, g: number[]) {
-    if (y === 3 || y === 4) {
-      // Einmal 1.0 - der Rest mindestens 2.0 oder höher
-      if (g.filter(item => item === 1).length === 1) {
-        return g.filter(item => item >= 2).length >= 3;
-      }
-      // Viermal 2.0
-      return g.filter(item => item === 2).length === 4;
+    if (y < 3) {
+      return false;
     }
-    return false;
+    // 4x >= 1.0 und 3x >= 2.0
+    return this.filter(g, 4, 1) && this.filter(g, 3, 2);
   }
 
   private calcBefriedigendG(y: number, g: number[]) {
-    if (y === 3 || y === 4) {
-      // Zweimal 1.0 - der Rest mindestens 2.0 oder höher
-      if (g.filter(item => item === 1).length === 2) {
-        return g.filter(item => item >= 2).length >= 2;
-      }
-      // Dreimal 1.0 - der Rest mindestens 3.0 oder höher
-      if (g.filter(item => item === 1).length === 3) {
-        return g.filter(item => item >= 3).length >= 1;
-      }
+    if (y < 3) {
+      return false;
     }
-    return false;
+    // 2x 1.0 und 2x >= 2.0
+    if (this.filter(g, 2, 1, true) && this.filter(g, 2, 2)) {
+      return true;
+    }
+    // 3x 1.0 und 1x >= 3.0
+    if (this.filter(g, 3, 1, true) && this.filter(g, 1, 3)) {
+      return true;
+    }
+    // 3x 3.0
+    return this.filter(g, 3, 3);
   }
 
   private calcGenuegendG(y: number, g: number[]) {
-    if (y === 3 || y === 4) {
-      // Einmal 0.0 - der Rest mindestens 1.0 oder höher
-      if (g.filter(item => item === 0).length === 1) {
-        return g.filter(item => item >= 1).length >= 3;
-      }
-      // Dreimal 1.0 - einmal 2.0 oder höher
-      if (g.filter(item => item === 1).length === 3) {
-        return g.filter(item => item >= 2).length >= 1;
-      }
-      // Viermal 1.0
-      return g.filter(item => item === 1).length === 4;
+    if (y < 3) {
+      return false;
     }
-    return false;
+    // 3x 1.0
+    return this.filter(g, 3, 1);
   }
 
   private calcNichtGenuegendG(y: number, g: number[]) {
-    if (y === 3 || y === 4) {
-      // Die Hälfte der Aufgaben ist 0.0
-      return g.filter(item => item === 0).length >= 2;
+    if (y < 3) {
+      return false;
     }
-    return false;
+    // 2x 0.0
+    return this.filter(g, 2, 0);
   }
 
   private calcBefriedigend(y: number, g: number[]) {
-    if (y === 1 || y === 2) {
-      // Mindestens zweimal 2.0 – der Rest 3.0 oder höher
-      if (g.filter(item => item === 2).length === 2) {
-        return g.filter(item => item >= 3).length >= 2;
-      }
-      // Dreimal 2.0 - einmal 3.0 oder höher
-      if (g.filter(item => item === 2).length === 3) {
-        return g.filter(item => item >= 3).length >= 1;
-      }
-      // Einmal 1.0 – der Rest mindestens 3.0 oder höher
-      if (g.filter(item => item === 1).length === 1) {
-        return g.filter(item => item >= 3).length >= 3;
-      }
-      // Viermal 2.0
-      return g.filter(item => item === 2).length === 4;
+    if (y > 2) {
+      return false;
     }
-    return false;
+    // 4x >= 2.0
+    if (this.filter(g, 4, 2)) {
+      return true;
+    }
+    // 4x >= 1.0 und 3x >= 3.0
+    return this.filter(g, 4, 1) && this.filter(g, 3, 3);
   }
 
   private calcGenuegend(y: number, g: number[]) {
-    if (y === 1 || y === 2) {
-      // Zweimal 1.0 – der Rest 2.0 oder höher
-      if (g.filter(item => item === 1).length === 2) {
-        return g.filter(item => item >= 2).length >= 2;
-      }
-      // Einmal 0.0 – einmal 1.0 - Rest mindestens 2.0 oder höher
-      if (g.filter(item => item === 0).length === 1) {
-        if (g.filter(item => item === 1).length === 1) {
-          return g.filter(item => item >= 2).length >= 2;
-        }
-      }
-      // Einmal 1.0 – der Rest mindestens 2.0 oder höher
-      if (g.filter(item => item === 1).length === 1) {
-        return g.filter(item => item >= 2).length >= 3;
-      }
-      // Dreimal 1.0 – Rest mindestens 3.0 oder höher
-      if (g.filter(item => item === 1).length === 3) {
-        return g.filter(item => item >= 3).length >= 1;
-      }
+    if (y > 2) {
+      return false;
     }
-    return false;
+    // 1x 0.0 und 1x >= 1.0 und 2x >= 2.0
+    if (this.filter(g, 1, 0, true) && this.filter(g, 1, 1) && this.filter(g, 2, 2)) {
+      return true;
+    }
+    // 4x >= 1.0 und 2x >= 2.0
+    if (this.filter(g, 4, 1) && this.filter(g, 2, 2)) {
+      return true;
+    }
+    // 3x 1.0 und 1x >= 2.0
+    return this.filter(g, 3, 1, true) && this.filter(g, 1, 2);
   }
 
   private calcNichtGenuegend(y: number, g: number[]) {
-    if (y === 1 || y === 2) {
-      // Einmal 0.0 – mindestens zweimal 1.0
-      if (g.filter(item => item === 0).length === 1) {
-        return g.filter(item => item === 1).length >= 2;
-      }
-      // Die Hälfte der Aufgaben ist 0.0
-      if (g.filter(item => item === 0).length >= 2) {
-        return true;
-      }
-      // Viermal 1.0
-      if (g.filter(item => item === 1).length === 4) {
-        return true;
-      }
-      // Dreimal 1.0 – einaml 2.0
-      if (g.filter(item => item === 1).length === 3) {
-        return g.filter(item => item === 2).length === 1;
-      }
+    if (y > 2) {
+      return false;
     }
-    return false;
+    // 2x >= 0.0
+    if (this.filter(g, 2, 0)) {
+      return true;
+    }
+    // 1x 0.0 und 3x >= 1.0
+    if (this.filter(g, 1, 0, true) && this.filter(g, 3, 1)) {
+      return true;
+    }
+    return this.filter(g, 4, 1);
+  }
+
+  private filter(list: number[], c: number, v: number, e?: boolean) {
+    if (e) {
+      return list.filter(item => item === v).length === c;
+    } else {
+      return list.filter(item => item >= v).length >= c;
+    }
   }
 }
