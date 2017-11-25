@@ -53,15 +53,14 @@ export const GRADEINFO_1_2: GradeInfo[] = [
          'Zweimal 1.0 - der Rest 2.0 oder höher',
          'Einmal 1.0 - der Rest mindestens 2.0 oder höher',
          'Einmal 0.0 - einmal 1.0 - Rest mindestens 2.0 oder höher',
-         'Dreimal 1.0 - Rest mindestens 2.0 oder höher'
+         'Dreimal 1.0 - Rest mindestens 3.0 oder höher'
       ]
    },
    {
       grade: 'Nicht Genügend', descr: [
          'Die Hälfte der Aufgaben ist 0.0',
-         'Einmal 0.0 - zweimal 1.0 und der Rest 2.0 oder höher',
-         'Einmal 0.0 - der Rest ist 1.0',
-         'Viermal 1.0'
+         'Einmal 0.0 - der Rest ist 1.0 oder höher',
+         'Dreimal 1.0 - Rest niedriger als 3.0'
       ]
    }
 ];
@@ -86,14 +85,13 @@ export const GRADEINFO_3_4: GradeInfo[] = [
       grade: 'Befriedigend (G)', descr: [
          'Zweimal 1.0 - der Rest mindestens 2.0 oder höher',
          'Dreimal 1.0 - der Rest mindestens 3.0 oder höher',
-         'Einmal 0.0 - der Rest mindestens 3.0 oder höher'
+         'Einmal 0.0 - der Rest mindestens 2.0 oder höher'
       ]
    },
    {
       grade: 'Genügend (G)', descr: [
          'Einmal 0.0 - der Rest mindestens 1.0 oder höher',
-         'Dreimal 1.0 - einmal 2.0',
-         'Viermal 1.0'
+         'Dreimal 1.0 - Rest niedriger als 3.0'
       ]
    },
    { grade: 'Nicht Genügend (G)', descr: ['Die Hälfte der Aufgaben ist 0.0'] }
