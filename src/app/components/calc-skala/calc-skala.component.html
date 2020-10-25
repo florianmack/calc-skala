@@ -1,5 +1,6 @@
+<mat-toolbar class="mat-elevation-z6" color="primary">4.0 Skala</mat-toolbar>
 <mat-card class="calc-skala">
-  <mat-card-title>
+  <mat-card-title class="title">
     <mat-form-field class="full-width">
       <mat-select placeholder="Jahrgang" [(value)]="y">
         <mat-option *ngFor="let year of years" [value]="year.key">
@@ -39,7 +40,7 @@
     </mat-form-field>
     <br><br>
     <p class="calc-grade">
-      <span><strong>Note: </strong>{{calc(y, g1, g2, g3, g4)}}</span>
+      <span>Note: {{calc()}}</span>
     </p>
   </mat-card-content>
   <mat-card-actions>

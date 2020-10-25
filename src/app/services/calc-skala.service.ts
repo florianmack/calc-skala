@@ -52,17 +52,17 @@ export class CalcSkalaService {
     }
   }
 
-  private calcSehrGut(y: number, g: number[]) {
+  private calcSehrGut(y: number, g: number[]): boolean {
     // 4x >= 3.0 und 2x >= 4.0
     return this.filter(g, 4, 3) && this.filter(g, 2, 4);
 }
 
-  private calcGut(y: number, g: number[]) {
+  private calcGut(y: number, g: number[]): boolean {
     // 4x >= 2.0 und 3x >= 3.0
     return this.filter(g, 4, 2) && this.filter(g, 3, 3);
   }
 
-  private calcBefriedigendV(y: number, g: number[]) {
+  private calcBefriedigendV(y: number, g: number[]): boolean {
     if (y < 3) {
       return false;
     }
@@ -74,7 +74,7 @@ export class CalcSkalaService {
     return this.filter(g, 4, 2) && this.filter(g, 1, 3);
   }
 
-  private calcGenuegendV(y: number, g: number[]) {
+  private calcGenuegendV(y: number, g: number[]): boolean {
     if (y < 3) {
       return false;
     }
@@ -82,7 +82,7 @@ export class CalcSkalaService {
     return this.filter(g, 4, 1) && this.filter(g, 3, 2);
   }
 
-  private calcBefriedigendG(y: number, g: number[]) {
+  private calcBefriedigendG(y: number, g: number[]): boolean {
     if (y < 3) {
       return false;
     }
@@ -98,7 +98,7 @@ export class CalcSkalaService {
     return this.filter(g, 3, 2);
   }
 
-  private calcGenuegendG(y: number, g: number[]) {
+  private calcGenuegendG(y: number, g: number[]): boolean {
     if (y < 3) {
       return false;
     }
@@ -106,7 +106,7 @@ export class CalcSkalaService {
     return this.filter(g, 3, 1);
   }
 
-  private calcNichtGenuegendG(y: number, g: number[]) {
+  private calcNichtGenuegendG(y: number, g: number[]): boolean {
     if (y < 3) {
       return false;
     }
@@ -114,7 +114,7 @@ export class CalcSkalaService {
     return this.filter(g, 2, 0);
   }
 
-  private calcBefriedigend(y: number, g: number[]) {
+  private calcBefriedigend(y: number, g: number[]): boolean {
     if (y > 2) {
       return false;
     }
@@ -126,7 +126,7 @@ export class CalcSkalaService {
     return this.filter(g, 4, 1) && this.filter(g, 3, 3);
   }
 
-  private calcGenuegend(y: number, g: number[]) {
+  private calcGenuegend(y: number, g: number[]): boolean {
     if (y > 2) {
       return false;
     }
@@ -142,7 +142,7 @@ export class CalcSkalaService {
     return this.filter(g, 3, 1, true) && this.filter(g, 1, 3);
   }
 
-  private calcNichtGenuegend(y: number, g: number[]) {
+  private calcNichtGenuegend(y: number, g: number[]): boolean {
     if (y > 2) {
       return false;
     }
@@ -158,7 +158,7 @@ export class CalcSkalaService {
     return this.filter(g, 3, 1, true) && this.filter(g, 1, 1);
   }
 
-  private filter(list: number[], c: number, v: number, e?: boolean) {
+  private filter(list: number[], c: number, v: number, e?: boolean): boolean {
     if (e) {
       return list.filter(item => item === v).length === c;
     } else {

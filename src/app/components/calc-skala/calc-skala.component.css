@@ -1,8 +1,12 @@
-.app-calc-skala-host {
+:host {
    display: flex;
    flex-direction: column;
-   height: 100%;
+   height: 100vh;
    overflow-y: auto;
+}
+
+.mat-elevation-z6 {
+   z-index: 2;
 }
 
 .calc-skala {
@@ -13,15 +17,15 @@
 }
 
 .calc-grade {
-   font-size: 24px;
+   font-size: 20px;
+}
+
+.title {
+   font-size: 20px;
 }
 
 .full-width {
    width: 100%;
-}
-
-.mat-select-panel {
-   max-height: 512px !important;
 }
 
 .mat-card-actions {
