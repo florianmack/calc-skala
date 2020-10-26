@@ -9,7 +9,7 @@
       </mat-select>
     </mat-form-field>
   </mat-card-title>
-  <mat-card-content>
+  <mat-card-content class="content">
     <mat-form-field class="full-width">
       <mat-select placeholder="Listening" [(value)]="g1">
         <mat-option *ngFor="let grade of grades" [value]="grade.key">
@@ -38,12 +38,20 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <br><br>
-    <p class="calc-grade">
-      <span>Note: {{calc()}}</span>
-    </p>
+    <div class="grade-container">
+      <div class="grade-title">Note</div>
+      <div class="divider"></div>
+      <div class="grade-row">
+         <div class="grade-text">Standard:</div>
+         <div>{{calc()}}</div>
+      </div>
+      <div class="grade-row">
+         <div class="grade-text">Standard AHS:</div>
+         <div>{{calc()}}</div>
+      </div>
+    </div>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions class="actions">
     <span class="spacer"></span>
     <button mat-button *ngIf="y" (click)="info()">Info</button>
     <button mat-button (click)="clear()">Löschen</button>
