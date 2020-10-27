@@ -38,16 +38,16 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <div class="grade-container">
+    <div class="grade-container" *ngIf="y">
       <div class="grade-title">Note</div>
       <div class="divider"></div>
       <div class="grade-row">
-         <div class="grade-text">Standard:</div>
-         <div>{{calc()}}</div>
-      </div>
-      <div class="grade-row">
          <div class="grade-text">Standard AHS:</div>
-         <div>{{calc()}}</div>
+         <div>{{calcAHS()}}</div>
+      </div>
+      <div class="grade-row" *ngIf="y > 1">
+         <div class="grade-text">Standard:</div>
+         <div>{{calcStd()}}</div>
       </div>
     </div>
   </mat-card-content>

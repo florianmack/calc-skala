@@ -24,17 +24,11 @@ export const GRADES: KeyValue[] = [
 ];
 
 export const FINALGRADES: KeyValue[] = [
-   { key: 0, value: 'Undefiniert' },
    { key: 1, value: 'Sehr gut' },
    { key: 2, value: 'Gut' },
-   { key: 3, value: 'Befriedigend (V)' },
-   { key: 4, value: 'Genügend (V)' },
-   { key: 5, value: 'Befriedigend (G)' },
-   { key: 6, value: 'Genügend (G)' },
-   { key: 7, value: 'Nicht Genügend (G)' },
-   { key: 8, value: 'Befriedigend' },
-   { key: 9, value: 'Genügend' },
-   { key: 10, value: 'Nicht Genügend' }
+   { key: 3, value: 'Befriedigend' },
+   { key: 4, value: 'Genügend' },
+   { key: 5, value: 'Nicht Genügend' }
 ];
 
 export const GRADEINFO_1_2: GradeInfo[] = [

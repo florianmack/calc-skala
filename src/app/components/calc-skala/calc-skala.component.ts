@@ -26,8 +26,13 @@ export class CalcSkalaComponent {
                public dialog: MatDialog) {
    }
 
-   calc(): string {
-      const grade = this.service.calc(this.y, [this.g1, this.g2, this.g3, this.g4]);
+   calcAHS(): string {
+      const grade = this.service.calcAHS([this.g1, this.g2, this.g3, this.g4]);
+      return grade ? grade.value : '';
+   }
+
+   calcStd(): string {
+      const grade = this.service.calcStd([this.g1, this.g2, this.g3, this.g4]);
       return grade ? grade.value : '';
    }
 
