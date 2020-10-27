@@ -15,6 +15,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
    declarations: [
@@ -31,7 +33,8 @@ import { MatListModule } from '@angular/material/list';
       MatSelectModule,
       MatButtonModule,
       MatDialogModule,
-      MatListModule
+      MatListModule,
+      ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
    ],
    providers: [
       CalcSkalaService
