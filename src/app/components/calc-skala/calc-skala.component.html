@@ -1,59 +1,64 @@
-<mat-toolbar class="mat-elevation-z6" color="primary">4.0 Skala</mat-toolbar>
+<mat-toolbar class="mat-elevation-z6" color="primary">
+   <span>4.0 Skala</span>
+   <span class="spacer"></span>
+   <button mat-icon-button (click)="info()">
+      <mat-icon>info</mat-icon>
+   </button>
+</mat-toolbar>
 <mat-card class="calc-skala">
-  <mat-card-title class="title">
-    <mat-form-field class="full-width">
-      <mat-select placeholder="Jahrgang" [(value)]="y">
-        <mat-option *ngFor="let year of years" [value]="year.key">
-          {{ year.value }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-card-title>
-  <mat-card-content class="content">
-    <mat-form-field class="full-width">
-      <mat-select placeholder="Listening" [(value)]="g1">
-        <mat-option *ngFor="let grade of grades" [value]="grade.key">
-          {{ grade.value }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <mat-select placeholder="English in use" [(value)]="g2">
-        <mat-option *ngFor="let grade of grades" [value]="grade.key">
-          {{ grade.value }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <mat-select placeholder="Reading" [(value)]="g3">
-        <mat-option *ngFor="let grade of grades" [value]="grade.key">
-          {{ grade.value }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <mat-select placeholder="Writing" [(value)]="g4">
-        <mat-option *ngFor="let grade of grades" [value]="grade.key">
-          {{ grade.value }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <div class="grade-container" *ngIf="y">
-      <div class="grade-title">Note</div>
-      <div class="divider"></div>
-      <div class="grade-row">
-         <div class="grade-text">Standard AHS:</div>
-         <div>{{calcAHS()}}</div>
+   <mat-card-title class="title">
+      <mat-form-field class="full-width">
+         <mat-select placeholder="Jahrgang" [(value)]="y">
+            <mat-option *ngFor="let year of years" [value]="year.key">
+               {{ year.value }}
+            </mat-option>
+         </mat-select>
+      </mat-form-field>
+   </mat-card-title>
+   <mat-card-content class="content">
+      <mat-form-field class="full-width">
+         <mat-select placeholder="Listening" [(value)]="g1">
+            <mat-option *ngFor="let grade of grades" [value]="grade.key">
+               {{ grade.value }}
+            </mat-option>
+         </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+         <mat-select placeholder="English in use" [(value)]="g2">
+            <mat-option *ngFor="let grade of grades" [value]="grade.key">
+               {{ grade.value }}
+            </mat-option>
+         </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+         <mat-select placeholder="Reading" [(value)]="g3">
+            <mat-option *ngFor="let grade of grades" [value]="grade.key">
+               {{ grade.value }}
+            </mat-option>
+         </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+         <mat-select placeholder="Writing" [(value)]="g4">
+            <mat-option *ngFor="let grade of grades" [value]="grade.key">
+               {{ grade.value }}
+            </mat-option>
+         </mat-select>
+      </mat-form-field>
+      <div class="grade-container" *ngIf="y">
+         <div class="grade-row">
+            <div class="grade-text">Standard AHS:</div>
+            <div>{{calcAHS()}}</div>
+         </div>
+         <div class="grade-row" *ngIf="y > 1">
+            <div class="grade-text">Standard:</div>
+            <div>{{calcStd()}}</div>
+         </div>
       </div>
-      <div class="grade-row" *ngIf="y > 1">
-         <div class="grade-text">Standard:</div>
-         <div>{{calcStd()}}</div>
-      </div>
-    </div>
-  </mat-card-content>
-  <mat-card-actions class="actions">
-    <span class="spacer"></span>
-    <button mat-button *ngIf="y" (click)="info()">Info</button>
-    <button mat-button (click)="clear()">Löschen</button>
-  </mat-card-actions>
+   </mat-card-content>
+   <mat-card-actions class="actions">
+      <span class="spacer"></span>
+      <button mat-fab color="primary" (click)="clear()">
+         <mat-icon>delete</mat-icon>
+       </button>
+   </mat-card-actions>
 </mat-card>

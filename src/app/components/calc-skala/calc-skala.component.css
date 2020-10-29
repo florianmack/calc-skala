@@ -22,29 +22,18 @@
 .grade-container {
    display: flex;
    flex-direction: column;
-   margin-top: 24px;
+   margin-top: 10px;
 }
 
 .grade-row {
    display: flex;
    flex-direction: row;
    margin-top: 24px;
-   font-size: 18px;
-}
-
-.grade-title {
    font-size: 20px;
-   font-weight: 500;
 }
 
 .grade-text {
-   min-width: 135px;
-}
-
-.divider {
-   padding-bottom: 24px;
-   border-bottom: solid 1px;
-   border-color: gray;
+   min-width: 150px;
 }
 
 .title {
@@ -61,6 +50,4 @@
 
 .actions {
    display: flex;
-   padding-top: 10px !important;
-   padding-bottom: 10px !important;
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { CalcSkalaService } from '../../services/calc-skala.service';
-import { YEARS, GRADES } from '../../services/calc-skala';
+import { YEARS, GRADES, GRADEINFO_AHS, GRADEINFO_STD } from '../../services/calc-skala';
 import { InfoSkalaComponent } from '../info-skala/info-skala.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -39,7 +39,10 @@ export class CalcSkalaComponent {
    info(): void {
       this.dialog.open(InfoSkalaComponent, {
          width: '680px',
-         data: { gradeInfo: this.service.info(this.y) }
+         data: {
+            gradeInfoAHS: GRADEINFO_AHS,
+            gradeInfoStd: GRADEINFO_STD
+         }
       });
    }
 

@@ -15,7 +15,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 import { ServiceWorkerModule } from '@angular/service-worker';
+
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -32,6 +34,7 @@ import { environment } from '../environments/environment';
       MatCardModule,
       MatSelectModule,
       MatButtonModule,
+      MatIconModule,
       MatDialogModule,
       MatListModule,
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

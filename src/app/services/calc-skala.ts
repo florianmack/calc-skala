@@ -31,62 +31,86 @@ export const FINALGRADES: KeyValue[] = [
    { key: 5, value: 'Nicht Genügend' }
 ];
 
-export const GRADEINFO_1_2: GradeInfo[] = [
-   { grade: 'Sehr gut', descr: ['Mindestens zweimal eine 4.0 Bewertung - der Rest ist 3.0'] },
-   { grade: 'Gut', descr: ['Mindestens dreimal 3.0 oder höher - höchstens einmal 2.0'] },
+export const GRADEINFO_AHS: GradeInfo[] = [
    {
-      grade: 'Befriedigend', descr: [
-         'Mindestens zweimal 2.0 - der Rest 3.0 oder höher',
-         'Dreimal 2.0 - einmal 3.0 oder höher',
-         'Viermal 2.0',
-         'Einmal 1.0 - der Rest mindestens 3.0 oder höher'
+      grade: 'Sehr gut',
+      descr: [
+         'Mindestens zweimal eine 4.0 Bewertung - der Rest ist 3.0'
       ]
    },
    {
-      grade: 'Genügend', descr: [
-         'Zweimal 1.0 - der Rest 2.0 oder höher',
-         'Einmal 1.0 - der Rest mindestens 2.0 oder höher',
-         'Einmal 0.0 - einmal 1.0 - Rest mindestens 2.0 oder höher',
-         'Dreimal 1.0 - Rest mindestens 3.0 oder höher'
+      grade: 'Gut',
+      descr: [
+         'Mindestens dreimal 3.0 oder höher - höchstens einmal 2.0'
       ]
    },
    {
-      grade: 'Nicht Genügend', descr: [
-         'Die Hälfte der Aufgaben ist 0.0',
-         'Einmal 0.0 - der Rest ist 1.0 oder höher',
-         'Dreimal 1.0 - Rest niedriger als 3.0'
-      ]
-   }
-];
-
-export const GRADEINFO_3_4: GradeInfo[] = [
-   { grade: 'Sehr gut', descr: ['Mindestens zweimal eine 4.0 Bewertung - der Rest ist 3.0'] },
-   { grade: 'Gut', descr: ['Mindestens dreimal 3.0 oder höher - höchstens einmal 2.0'] },
-   {
-      grade: 'Befriedigend (V)', descr: [
+      grade: 'Befriedigend',
+      descr: [
          'Einmal 1.0 - der Rest mindestens 3.0 oder höher',
          'Zweimal 2.0 - der Rest mindestens 3.0 oder höher',
          'Dreimal 2.0 - der Rest mindestens 3.0 oder höher'
       ]
    },
    {
-      grade: 'Genügend (V)', descr: [
+      grade: 'Genügend',
+      descr: [
          'Einmal 1.0 - der Rest mindestens 2.0 oder höher',
          'Viermal 2.0'
       ]
    },
    {
-      grade: 'Befriedigend (G)', descr: [
+      grade: 'Nicht Genügend',
+      descr: [
          'Zweimal 1.0 - der Rest mindestens 2.0 oder höher',
          'Dreimal 1.0 - der Rest mindestens 3.0 oder höher',
-         'Einmal 0.0 - der Rest mindestens 2.0 oder höher'
+         'Einmal 0.0 - der Rest mindestens 2.0 oder höher',
+         'Einmal 0.0 - einmal 1.0 – der Rest 2.0 oder höher',
+         'Dreimal 1.0 – einmal 2.0',
+         'Viermal 1.0',
+         'Die Hälfte der Aufgaben ist 0.0'
+      ]
+   }
+];
+
+export const GRADEINFO_STD: GradeInfo[] = [
+   {
+      grade: 'Sehr gut',
+      descr: [
+         'Mindestens zweimal eine 4.0 Bewertung – der Rest ist 3.0',
+         'Mindestens dreimal 3.0 oder höher - höchstens einmal 2.0',
+         'Einmal 1.0 - der Rest mindestens 3.0 oder höher',
+         'Zweimal 2.0 - der Rest mindestens 3.0 oder höher',
+         'Dreimal 2.0 - der Rest mindestens 3.0 oder höher'
       ]
    },
    {
-      grade: 'Genügend (G)', descr: [
-         'Einmal 0.0 - der Rest mindestens 1.0 oder höher',
-         'Dreimal 1.0 - Rest niedriger als 3.0'
+      grade: 'Gut',
+      descr: [
+         'Einmal 1.0 - der Rest mindestens 2.0 oder höher',
+         'Viermal 2.0'
       ]
    },
-   { grade: 'Nicht Genügend (G)', descr: ['Die Hälfte der Aufgaben ist 0.0'] }
+   {
+      grade: 'Befriedigend',
+      descr: [
+         'Zweimal 1.0 – der Rest mindestens 2.0 oder höher',
+         'Dreimal 1.0 – der Rest mindestens 3.0 oder höher',
+         'Einmal 0.0 – der Rest mindestens 2.0 oder höher'
+      ]
+   },
+   {
+      grade: 'Genügend',
+      descr: [
+         'Einmal 0.0 - einmal 1.0 – der Rest 2.0 oder höher',
+         'Dreimal 1.0 – einmal 2.0 ',
+         'Viermal 1.0'
+      ]
+   },
+   {
+      grade: 'Nicht Genügend',
+      descr: [
+         'Die Hälfte der Aufgaben ist 0.0'
+      ]
+   }
 ];

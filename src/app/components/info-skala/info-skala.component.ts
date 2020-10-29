@@ -3,10 +3,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
    selector: 'app-info-skala',
-   templateUrl: './info-skala.component.html'
+   templateUrl: './info-skala.component.html',
+   styleUrls: ['./info-skala.component.css']
 })
 export class InfoSkalaComponent {
-
    constructor(public dialogRef: MatDialogRef<InfoSkalaComponent>,
                @Inject(MAT_DIALOG_DATA) public data: any) {
    }

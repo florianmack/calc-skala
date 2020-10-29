@@ -1,13 +1,27 @@
-<h1 mat-dialog-title>Informationen</h1>
+<h1 mat-dialog-title>Notenschlüssel</h1>
 <div mat-dialog-content>
-  <div *ngFor="let info of data.gradeInfo">
-    <h3>{{info.grade}}</h3>
-    <p *ngFor="let descr of info.descr">
-      <span>{{descr}}</span>
-    </p>
-    <br>
-  </div>
+   <p></p>
+   <mat-divider></mat-divider>
+   <br>
+   <h2 class="align-center"><span>Standard AHS</span></h2>
+   <div *ngFor="let info of data.gradeInfoAHS">
+      <h3 class="bold">{{info.grade}}</h3>
+      <p *ngFor="let descr of info.descr">
+         <span>{{descr}}</span>
+      </p>
+      <br>
+   </div>
+   <mat-divider></mat-divider>
+   <br>
+   <h2 class="align-center">Standard</h2>
+   <div *ngFor="let info of data.gradeInfoStd">
+      <h3 class="bold">{{info.grade}}</h3>
+      <p *ngFor="let descr of info.descr">
+         <span>{{descr}}</span>
+      </p>
+      <br>
+   </div>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="close()">Schließen</button>
+   <button mat-button (click)="close()">Schließen</button>
 </div>

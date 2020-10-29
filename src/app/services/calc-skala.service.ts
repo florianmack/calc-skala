@@ -1,15 +1,8 @@
 import { Injectable } from '@angular/core';
-import {
-   KeyValue,
-   FINALGRADES,
-   GRADEINFO_1_2,
-   GRADEINFO_3_4,
-   GradeInfo
-} from './calc-skala';
+import { KeyValue, FINALGRADES } from './calc-skala';
 
 @Injectable()
 export class CalcSkalaService {
-
    constructor() {
    }
 
@@ -44,14 +37,6 @@ export class CalcSkalaService {
          return FINALGRADES.find(item => item.key === 4);
       } else {
          return FINALGRADES.find(item => item.key === 5);
-      }
-   }
-
-   public info(y: number): GradeInfo[] {
-      if (y === 1 || y === 2) {
-         return GRADEINFO_1_2;
-      } else if (y === 3 || y === 4) {
-         return GRADEINFO_3_4;
       }
    }
 
