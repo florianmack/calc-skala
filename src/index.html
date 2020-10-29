@@ -2,27 +2,36 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>4.0 Skala</title>
-  <base href="/">
+   <meta charset="utf-8">
+   <title>4.0 Skala</title>
+   <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/title-icon-192x192.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/title-icon-192x192.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#ffffff">
+   <link rel="manifest" href="manifest.webmanifest">
+   <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="mat-typography">
-  <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+   <app-root></app-root>
+   <script type="text/javascript">
+      // set position for standalone/browser apps
+      function getPositon() {
+         if (('standalone' in window.navigator) && window.navigator.standalone) {
+            return 'fixed';
+         }
+         return 'relative';
+      }
+      document.body.style.position = getPositon();
+   </script>
 </body>
 
 </html>
