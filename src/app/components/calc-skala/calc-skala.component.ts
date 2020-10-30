@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { CalcSkalaService } from '../../services/calc-skala.service';
-import { YEARS, GRADES, GRADEINFO_AHS, GRADEINFO_STD } from '../../services/calc-skala';
+import { CLASSIFICATION, GRADES, GRADEINFO_AHS, GRADEINFO_STD } from '../../services/calc-skala';
 import { InfoSkalaComponent } from '../info-skala/info-skala.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class CalcSkalaComponent {
 
-   public years = YEARS;
+   public classifications = CLASSIFICATION;
    public grades = GRADES;
 
    public y: number;
@@ -47,6 +47,7 @@ export class CalcSkalaComponent {
    }
 
    clear(): void {
+      this.y = undefined;
       this.g1 = undefined;
       this.g2 = undefined;
       this.g3 = undefined;

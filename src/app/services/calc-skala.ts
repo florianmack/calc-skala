@@ -8,11 +8,9 @@ export interface GradeInfo {
    descr: string[];
 }
 
-export const YEARS: KeyValue[] = [
-   { key: 1, value: '1. Klasse' },
-   { key: 2, value: '2. Klasse' },
-   { key: 3, value: '3. Klasse' },
-   { key: 4, value: '4. Klasse' }
+export const CLASSIFICATION: KeyValue[] = [
+   { key: 1, value: 'Standard AHS' },
+   { key: 2, value: 'Standard' }
 ];
 
 export const GRADES: KeyValue[] = [

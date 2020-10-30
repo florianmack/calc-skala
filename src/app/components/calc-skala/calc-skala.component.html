@@ -8,9 +8,9 @@
 <mat-card class="calc-skala">
    <mat-card-title class="title">
       <mat-form-field class="full-width">
-         <mat-select placeholder="Jahrgang" [(value)]="y">
-            <mat-option *ngFor="let year of years" [value]="year.key">
-               {{ year.value }}
+         <mat-select placeholder="Einstufung" [(value)]="y">
+            <mat-option *ngFor="let classification of classifications" [value]="classification.key">
+               {{ classification.value }}
             </mat-option>
          </mat-select>
       </mat-form-field>
@@ -44,15 +44,9 @@
             </mat-option>
          </mat-select>
       </mat-form-field>
-      <div class="grade-container" *ngIf="y">
-         <div class="grade-row">
-            <div class="grade-text">Standard AHS:</div>
-            <div>{{calcAHS()}}</div>
-         </div>
-         <div class="grade-row" *ngIf="y > 1">
-            <div class="grade-text">Standard:</div>
-            <div>{{calcStd()}}</div>
-         </div>
+      <div class="grade-row">
+         <div class="grade-text">Note:</div>
+         <div>{{y === 1 ? calcAHS() : calcStd()}}</div>
       </div>
    </mat-card-content>
    <mat-card-actions class="actions">
