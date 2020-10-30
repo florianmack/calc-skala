@@ -1,14 +1,11 @@
 html {
-   height: 100%;
-   height: -moz-available;
-   /* WebKit-based browsers will ignore this. */
    height: -webkit-fill-available;
-   /* Mozilla-based browsers will ignore this. */
-   height: stretch;
 }
 
 body {
-   height: 100%;
+   height: 100vh;
+   /* mobile viewport bug fix */
+   height: -webkit-fill-available;
    margin: 0;
    font-family: Roboto, "Helvetica Neue", sans-serif;
    background-color: #fafafa;
