@@ -1,11 +1,9 @@
 html {
-   height: -webkit-fill-available;
+   height: 100%;
 }
 
 body {
-   height: 100vh;
-   /* mobile viewport bug fix */
-   height: -webkit-fill-available;
+   height: 100%;
    margin: 0;
    font-family: Roboto, "Helvetica Neue", sans-serif;
    background-color: #fafafa;

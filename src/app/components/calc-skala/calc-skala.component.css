@@ -1,9 +1,13 @@
 :host {
    display: flex;
    flex-direction: column;
-   height: 100vh;
    /* mobile viewport bug fix */
+   height: 100vh;
+   /* WebKit-based browsers will ignore this. */
+   height: -moz-available;
+   /* Mozilla-based browsers will ignore this. */
    height: -webkit-fill-available;
+   height: stretch;
 }
 
 .mat-toolbar {
@@ -46,7 +50,7 @@
 }
 
 .content {
-   height: 100%;
+   flex: 1 1 auto;
 }
 
 .actions {
