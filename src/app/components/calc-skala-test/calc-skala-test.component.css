@@ -39,5 +39,7 @@
 }
 
 .btn-delete {
-   margin-left: auto;
+   position: absolute;
+   bottom: 20px;
+   right: 20px;
 }
