@@ -42,10 +42,7 @@
          <div>{{y === 1 ? calcAHS() : calcStd()}}</div>
       </div>
    </mat-card-content>
-   <mat-card-actions class="actions">
-      <span class="spacer"></span>
-      <button mat-fab color="primary" (click)="clear()">
-         <mat-icon>delete</mat-icon>
-      </button>
-   </mat-card-actions>
+   <button class="btn-delete" mat-fab color="primary" (click)="clear()">
+      <mat-icon>delete</mat-icon>
+   </button>
 </mat-card>
