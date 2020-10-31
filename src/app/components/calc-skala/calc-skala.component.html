@@ -5,54 +5,11 @@
       <mat-icon>info</mat-icon>
    </button>
 </mat-toolbar>
-<mat-card class="calc-skala">
-   <mat-card-title class="title">
-      <mat-form-field class="full-width">
-         <mat-select placeholder="Einstufung" [(value)]="y">
-            <mat-option *ngFor="let classification of classifications" [value]="classification.key">
-               {{ classification.value }}
-            </mat-option>
-         </mat-select>
-      </mat-form-field>
-   </mat-card-title>
-   <mat-card-content class="content">
-      <mat-form-field class="full-width">
-         <mat-select placeholder="Listening" [(value)]="g1">
-            <mat-option *ngFor="let grade of grades" [value]="grade.key">
-               {{ grade.value }}
-            </mat-option>
-         </mat-select>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-         <mat-select placeholder="English in use" [(value)]="g2">
-            <mat-option *ngFor="let grade of grades" [value]="grade.key">
-               {{ grade.value }}
-            </mat-option>
-         </mat-select>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-         <mat-select placeholder="Reading" [(value)]="g3">
-            <mat-option *ngFor="let grade of grades" [value]="grade.key">
-               {{ grade.value }}
-            </mat-option>
-         </mat-select>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-         <mat-select placeholder="Writing" [(value)]="g4">
-            <mat-option *ngFor="let grade of grades" [value]="grade.key">
-               {{ grade.value }}
-            </mat-option>
-         </mat-select>
-      </mat-form-field>
-      <div class="grade-row">
-         <div class="grade-text">Note:</div>
-         <div>{{y === 1 ? calcAHS() : calcStd()}}</div>
-      </div>
-   </mat-card-content>
-   <mat-card-actions class="actions">
-      <span class="spacer"></span>
-      <button mat-fab color="primary" (click)="clear()">
-         <mat-icon>delete</mat-icon>
-      </button>
-   </mat-card-actions>
-</mat-card>
+<mat-tab-group mat-align-tabs="start">
+   <mat-tab label="Schularbeit">
+      <app-calc-skala-test></app-calc-skala-test>
+   </mat-tab>
+   <mat-tab label="Zeugnis">
+      Content 2
+   </mat-tab>
+ </mat-tab-group>

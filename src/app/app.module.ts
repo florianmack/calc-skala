@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CalcSkalaComponent } from './components/calc-skala/calc-skala.component';
+import { CalcSkalaTestComponent } from './components/calc-skala-test/calc-skala-test.component';
 import { CalcSkalaService } from './services/calc-skala.service';
 import { InfoSkalaComponent } from './components/info-skala/info-skala.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,6 +26,7 @@ import { environment } from '../environments/environment';
    declarations: [
       AppComponent,
       CalcSkalaComponent,
+      CalcSkalaTestComponent,
       InfoSkalaComponent
    ],
    imports: [
@@ -31,6 +34,7 @@ import { environment } from '../environments/environment';
       BrowserAnimationsModule,
       MatToolbarModule,
       MatInputModule,
+      MatTabsModule,
       MatCardModule,
       MatSelectModule,
       MatButtonModule,
