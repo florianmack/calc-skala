@@ -2,7 +2,6 @@
    display: flex;
    flex-direction: column;
    height: 100%;
-   overflow-y: hidden;
 }
 
 .grade-row {
@@ -24,7 +23,7 @@
    padding: 20px;
    display: flex;
    flex-direction: column;
-   height: 100%;
+   flex: 1 0 auto;
    /* WebKit-based browsers will ignore this. */
    width: -moz-available;
    /* Mozilla-based browsers will ignore this. */
