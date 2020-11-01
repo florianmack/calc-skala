@@ -1,0 +1,32 @@
+<mat-card class="card">
+   <mat-card-title class="card-title">
+      <mat-form-field class="full-width">
+         <mat-select placeholder="Einstufung" [(value)]="y">
+            <mat-option *ngFor="let classification of classifications" [value]="classification.key">
+               {{ classification.value }}
+            </mat-option>
+         </mat-select>
+      </mat-form-field>
+   </mat-card-title>
+   <mat-card-content class="content">
+      <mat-form-field class="full-width">
+         <input matInput type="number" placeholder="4.0" [(value)]="g1">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+         <input matInput type="number" placeholder="3.0" [(value)]="g2">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+         <input matInput type="number" placeholder="2.0" [(value)]="g3">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+         <input matInput type="number" placeholder="1.0" [(value)]="g4">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+         <input matInput type="number" placeholder="0.0" [(value)]="g5">
+      </mat-form-field>
+      <div class="grade-row">
+         <div class="grade-text">Note:</div>
+         <div *ngIf="y">{{y === 1 ? calcAHS() : calcStd()}}</div>
+      </div>
+   </mat-card-content>
+</mat-card>

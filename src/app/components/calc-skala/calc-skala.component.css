@@ -21,3 +21,10 @@
 .mat-tab-group >>> .mat-tab-body-wrapper {
    flex: 1 1 auto;
 }
+
+.btn-delete {
+   position: absolute;
+   bottom: 20px;
+   right: 20px;
+   z-index: 2;
+}

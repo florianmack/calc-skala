@@ -1,20 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { CalcSkalaService } from '../../services/calc-skala.service';
-import { CLASSIFICATION, GRADEINFO_AHS, GRADEINFO_STD, GRADES } from '../../services/calc-skala';
+import { CLASSIFICATION, GRADES } from '../../services/calc-skala';
 import { MatDialog } from '@angular/material/dialog';
 
-import { InfoSkalaComponent } from '../info-skala/info-skala.component';
-
 @Component({
-   selector: 'app-calc-skala-test',
-   templateUrl: './calc-skala-test.component.html',
-   styleUrls: ['./calc-skala-test.component.css']
+   selector: 'app-calc-skala-report',
+   templateUrl: './calc-skala-report.component.html',
+   styleUrls: ['./calc-skala-report.component.css']
 })
 
-export class CalcSkalaTestComponent implements OnInit, OnDestroy {
+export class CalcSkalaReportComponent implements OnInit, OnDestroy {
    public onClearSubscription: any;
-   public onInfoSubscription: any;
 
    public classifications = CLASSIFICATION;
    public grades = GRADES;
@@ -24,6 +21,7 @@ export class CalcSkalaTestComponent implements OnInit, OnDestroy {
    public g2: number;
    public g3: number;
    public g4: number;
+   public g5: number;
 
    constructor(public service: CalcSkalaService,
                public dialog: MatDialog) {
@@ -31,12 +29,10 @@ export class CalcSkalaTestComponent implements OnInit, OnDestroy {
 
    ngOnInit(): void {
       this.onClearSubscription = this.service.onClear.subscribe(() => this.clear());
-      this.onInfoSubscription = this.service.onInfo.subscribe(() => this.info());
    }
 
    ngOnDestroy(): void {
       this.onClearSubscription.unsubscribe();
-      this.onInfoSubscription.unsubscribe();
    }
 
    calcAHS(): string {
@@ -47,16 +43,6 @@ export class CalcSkalaTestComponent implements OnInit, OnDestroy {
    calcStd(): string {
       const grade = this.service.calcStd([this.g1, this.g2, this.g3, this.g4]);
       return grade ? grade.value : '';
-   }
-
-   info(): void {
-      this.dialog.open(InfoSkalaComponent, {
-         width: '680px',
-         data: {
-            gradeInfoAHS: GRADEINFO_AHS,
-            gradeInfoStd: GRADEINFO_STD
-         }
-      });
    }
 
    clear(): void {

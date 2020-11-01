@@ -17,12 +17,10 @@ export class CalcSkalaComponent {
    }
 
    info(): void {
-      this.dialog.open(InfoSkalaComponent, {
-         width: '680px',
-         data: {
-            gradeInfoAHS: GRADEINFO_AHS,
-            gradeInfoStd: GRADEINFO_STD
-         }
-      });
+      this.service.onInfo.emit();
+   }
+
+   clear(): void {
+      this.service.onClear.emit();
    }
 }

@@ -6,6 +6,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CalcSkalaComponent } from './components/calc-skala/calc-skala.component';
 import { CalcSkalaTestComponent } from './components/calc-skala-test/calc-skala-test.component';
+import { CalcSkalaReportComponent } from './components/calc-skala-report/calc-skala-report.component';
+
 import { CalcSkalaService } from './services/calc-skala.service';
 import { InfoSkalaComponent } from './components/info-skala/info-skala.component';
 
@@ -22,11 +24,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { environment } from '../environments/environment';
 
+
 @NgModule({
    declarations: [
       AppComponent,
       CalcSkalaComponent,
       CalcSkalaTestComponent,
+      CalcSkalaReportComponent,
       InfoSkalaComponent
    ],
    imports: [

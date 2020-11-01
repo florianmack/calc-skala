@@ -1,8 +1,11 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { KeyValue, FINALGRADES } from './calc-skala';
 
 @Injectable()
 export class CalcSkalaService {
+   public onClear = new EventEmitter();
+   public onInfo = new EventEmitter();
+
    constructor() {
    }
 
