@@ -2,6 +2,7 @@
    display: flex;
    flex-direction: column;
    height: 100%;
+   overflow-y: hidden;
 }
 
 .grade-row {
@@ -23,7 +24,7 @@
    padding: 20px;
    display: flex;
    flex-direction: column;
-   flex: 1 1 auto;
+   height: 100%;
    /* WebKit-based browsers will ignore this. */
    width: -moz-available;
    /* Mozilla-based browsers will ignore this. */
@@ -37,10 +38,6 @@
 
 .full-width {
    width: 100%;
-}
-
-.content {
-   flex: 1 1 auto;
 }
 
 input[type=number]::-webkit-inner-spin-button,
