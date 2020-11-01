@@ -20,6 +20,14 @@
 
    <link rel="manifest" href="manifest.webmanifest">
    <meta name="theme-color" content="#ffffff">
+
+   <script src="https://code.jquery.com/jquery-1.12.4.min.js">
+      $(function () {
+         var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+         var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+         $("html, body").css({ "width": w, "height": h });
+      });
+   </script>
 </head>
 
 <body class="mat-typography">
