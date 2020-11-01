@@ -23,7 +23,7 @@
    padding: 20px;
    display: flex;
    flex-direction: column;
-   flex: 1 0 auto;
+   height: 100%;
    /* WebKit-based browsers will ignore this. */
    width: -moz-available;
    /* Mozilla-based browsers will ignore this. */
