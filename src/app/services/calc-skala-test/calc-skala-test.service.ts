@@ -1,14 +1,8 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { KeyValue, FINALGRADES } from './calc-skala';
+import { Injectable } from '@angular/core';
+import { FINALGRADES, KeyValue } from '../calc-skala/calc-skala';
 
 @Injectable()
-export class CalcSkalaService {
-   public onClear = new EventEmitter();
-   public onInfo = new EventEmitter();
-
-   constructor() {
-   }
-
+export class CalcSkalaTestService {
    public calcAHS(g: number[]): KeyValue {
       if (!g || g.filter(item => !Number.isFinite(item)).length > 0) {
          return undefined;

@@ -1,9 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
-import { CalcSkalaService } from '../../services/calc-skala.service';
-import { CLASSIFICATION, GRADEINFO_AHS, GRADEINFO_STD, GRADES } from '../../services/calc-skala';
 import { MatDialog } from '@angular/material/dialog';
-
+import { CLASSIFICATION, GRADEINFO_AHS, GRADEINFO_STD, GRADES } from 'src/app/services/calc-skala/calc-skala';
+import { CalcSkalaService } from 'src/app/services/calc-skala/calc-skala.service';
 import { InfoSkalaComponent } from '../info-skala/info-skala.component';
 
 @Component({
@@ -40,12 +38,12 @@ export class CalcSkalaTestComponent implements OnInit, OnDestroy {
    }
 
    calcAHS(): string {
-      const grade = this.service.calcAHS([this.g1, this.g2, this.g3, this.g4]);
+      const grade = this.service.calcAHSTest([this.g1, this.g2, this.g3, this.g4]);
       return grade ? grade.value : '';
    }
 
    calcStd(): string {
-      const grade = this.service.calcStd([this.g1, this.g2, this.g3, this.g4]);
+      const grade = this.service.calcStdTest([this.g1, this.g2, this.g3, this.g4]);
       return grade ? grade.value : '';
    }
 

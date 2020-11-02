@@ -8,11 +8,13 @@ import { CalcSkalaComponent } from './components/calc-skala/calc-skala.component
 import { CalcSkalaTestComponent } from './components/calc-skala-test/calc-skala-test.component';
 import { CalcSkalaReportComponent } from './components/calc-skala-report/calc-skala-report.component';
 
-import { CalcSkalaService } from './services/calc-skala.service';
+import { CalcSkalaService } from './services/calc-skala/calc-skala.service';
+import { CalcSkalaReportService } from './services/calc-skala-report/calc-skala-report.service';
+import { CalcSkalaTestService } from './services/calc-skala-test/calc-skala-test.service';
+
 import { InfoSkalaComponent } from './components/info-skala/info-skala.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
@@ -37,7 +39,6 @@ import { environment } from '../environments/environment';
       BrowserModule,
       BrowserAnimationsModule,
       MatToolbarModule,
-      MatInputModule,
       MatTabsModule,
       MatCardModule,
       MatSelectModule,
@@ -48,7 +49,9 @@ import { environment } from '../environments/environment';
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
    ],
    providers: [
-      CalcSkalaService
+      CalcSkalaService,
+      CalcSkalaTestService,
+      CalcSkalaReportService
    ],
    bootstrap: [AppComponent],
    entryComponents: [InfoSkalaComponent]

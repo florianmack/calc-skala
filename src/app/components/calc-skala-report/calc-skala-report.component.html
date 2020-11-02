@@ -10,19 +10,39 @@
    </mat-card-title>
    <mat-card-content class="content">
       <mat-form-field class="full-width">
-         <input matInput type="number" placeholder="4.0" [(value)]="g1">
+         <mat-select placeholder="4.0" [(value)]="g4">
+            <mat-option *ngFor="let grade of grades" [value]="grade">
+               {{ grade }}
+            </mat-option>
+         </mat-select>
       </mat-form-field>
       <mat-form-field class="full-width">
-         <input matInput type="number" placeholder="3.0" [(value)]="g2">
+         <mat-select placeholder="3.0" [(value)]="g3">
+            <mat-option *ngFor="let grade of grades" [value]="grade">
+               {{ grade }}
+            </mat-option>
+         </mat-select>
       </mat-form-field>
       <mat-form-field class="full-width">
-         <input matInput type="number" placeholder="2.0" [(value)]="g3">
+         <mat-select placeholder="2.0" [(value)]="g2">
+            <mat-option *ngFor="let grade of grades" [value]="grade">
+               {{ grade }}
+            </mat-option>
+         </mat-select>
       </mat-form-field>
       <mat-form-field class="full-width">
-         <input matInput type="number" placeholder="1.0" [(value)]="g4">
+         <mat-select placeholder="1.0" [(value)]="g1">
+            <mat-option *ngFor="let grade of grades" [value]="grade">
+               {{ grade }}
+            </mat-option>
+         </mat-select>
       </mat-form-field>
       <mat-form-field class="full-width">
-         <input matInput type="number" placeholder="0.0" [(value)]="g5">
+         <mat-select placeholder="0.0" [(value)]="g0">
+            <mat-option *ngFor="let grade of grades" [value]="grade">
+               {{ grade }}
+            </mat-option>
+         </mat-select>
       </mat-form-field>
       <div class="grade-row">
          <div class="grade-text">Note:</div>

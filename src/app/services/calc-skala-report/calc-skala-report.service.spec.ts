@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CalcSkalaService } from './calc-skala.service';
+import { CalcSkalaService } from '../calc-skala/calc-skala.service';
 
 describe('CalcSkalaService', () => {
   beforeEach(() => {

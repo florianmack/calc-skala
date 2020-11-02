@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-
-import { CalcSkalaService } from '../../services/calc-skala.service';
-import { GRADEINFO_AHS, GRADEINFO_STD } from '../../services/calc-skala';
-import { InfoSkalaComponent } from '../info-skala/info-skala.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CalcSkalaService } from 'src/app/services/calc-skala/calc-skala.service';
 
 @Component({
    selector: 'app-calc-skala',

@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
-import { CalcSkalaService } from '../../services/calc-skala.service';
-import { CLASSIFICATION, GRADES } from '../../services/calc-skala';
 import { MatDialog } from '@angular/material/dialog';
+import { CLASSIFICATION } from 'src/app/services/calc-skala/calc-skala';
+import { CalcSkalaService } from 'src/app/services/calc-skala/calc-skala.service';
 
 @Component({
    selector: 'app-calc-skala-report',
@@ -14,14 +13,14 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
    public onClearSubscription: any;
 
    public classifications = CLASSIFICATION;
-   public grades = GRADES;
+   public grades = [];
 
    public y: number;
-   public g1: number;
-   public g2: number;
-   public g3: number;
    public g4: number;
-   public g5: number;
+   public g3: number;
+   public g2: number;
+   public g1: number;
+   public g0: number;
 
    constructor(public service: CalcSkalaService,
                public dialog: MatDialog) {
@@ -29,6 +28,9 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
 
    ngOnInit(): void {
       this.onClearSubscription = this.service.onClear.subscribe(() => this.clear());
+      for (let itr = 0; itr <= 30; itr++) {
+         this.grades.push(itr);
+      }
    }
 
    ngOnDestroy(): void {
@@ -36,17 +38,18 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
    }
 
    calcAHS(): string {
-      const grade = this.service.calcAHS([this.g1, this.g2, this.g3, this.g4]);
+      const grade = this.service.calcAHSReport([this.g1, this.g2, this.g3, this.g4]);
       return grade ? grade.value : '';
    }
 
    calcStd(): string {
-      const grade = this.service.calcStd([this.g1, this.g2, this.g3, this.g4]);
+      const grade = this.service.calcStdReport([this.g1, this.g2, this.g3, this.g4]);
       return grade ? grade.value : '';
    }
 
    clear(): void {
       this.y = undefined;
+      this.g0 = undefined;
       this.g1 = undefined;
       this.g2 = undefined;
       this.g3 = undefined;
