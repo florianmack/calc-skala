@@ -7,6 +7,8 @@ body {
    margin: 0;
    font-family: Roboto, "Helvetica Neue", sans-serif;
    background-color: #fafafa;
+   /* Disables pull-to-refresh but allows overscroll glow effects. */
+   overscroll-behavior-y: none;
 }
 
 .spacer {
