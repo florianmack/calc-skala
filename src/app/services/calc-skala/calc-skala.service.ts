@@ -20,11 +20,11 @@ export class CalcSkalaService {
       return this.testService.calcStd(g);
    }
 
-   public calcAHSReport(g: number[]): KeyValue {
-      return this.reportService.calcAHS(g);
+   public calcAHSReport(g4: number, g3: number, g2: number, g1: number, g0: number): KeyValue {
+      return this.reportService.calcAHS(g4, g3, g2, g1, g0);
    }
 
-   public calcStdReport(g: number[]): KeyValue {
-      return this.reportService.calcStd(g);
+   public calcStdReport(g4: number, g3: number, g2: number, g1: number, g0: number): KeyValue {
+      return this.reportService.calcStd(g4, g3, g2, g1, g0);
    }
 }

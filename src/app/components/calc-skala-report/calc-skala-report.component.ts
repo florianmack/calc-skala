@@ -38,12 +38,12 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
    }
 
    calcAHS(): string {
-      const grade = this.service.calcAHSReport([this.g1, this.g2, this.g3, this.g4]);
+      const grade = this.service.calcAHSReport(this.g4, this.g3, this.g2, this.g1, this.g0);
       return grade ? grade.value : '';
    }
 
    calcStd(): string {
-      const grade = this.service.calcStdReport([this.g1, this.g2, this.g3, this.g4]);
+      const grade = this.service.calcStdReport(this.g4, this.g3, this.g2, this.g1, this.g0);
       return grade ? grade.value : '';
    }
 
