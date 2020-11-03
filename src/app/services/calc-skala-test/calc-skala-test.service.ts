@@ -28,9 +28,9 @@ export class CalcSkalaTestService {
          return FINALGRADES.find(item => item.key === 1);
       } else if (this.calcGenuegendAHS(g)) {
          return FINALGRADES.find(item => item.key === 2);
-      } else if (this.calcBefriedigend(g)) {
+      } else if (this.calcBefriedigendStd(g)) {
          return FINALGRADES.find(item => item.key === 3);
-      } else if (this.calcGenuegend(g)) {
+      } else if (this.calcGenuegendStd(g)) {
          return FINALGRADES.find(item => item.key === 4);
       } else {
          return FINALGRADES.find(item => item.key === 5);
@@ -61,7 +61,7 @@ export class CalcSkalaTestService {
       return this.filter(g, 4, 1) && this.filter(g, 3, 2);
    }
 
-   private calcBefriedigend(g: number[]): boolean {
+   private calcBefriedigendStd(g: number[]): boolean {
       // 2x 1.0 und 2x >= 2.0
       if (this.filter(g, 2, 1, true) && this.filter(g, 2, 2)) {
          return true;
@@ -74,7 +74,7 @@ export class CalcSkalaTestService {
       return this.filter(g, 3, 2);
    }
 
-   private calcGenuegend(g: number[]): boolean {
+   private calcGenuegendStd(g: number[]): boolean {
       // 3x 1.0
       return this.filter(g, 3, 1);
    }
