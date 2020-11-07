@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { filter } from 'rxjs/operators';
 import { CLASSIFICATION } from 'src/app/services/calc-skala/calc-skala';
 import { CalcSkalaService } from 'src/app/services/calc-skala/calc-skala.service';
+import { InfoSkalaComponent } from '../info-skala/info-skala.component';
 
 @Component({
    selector: 'app-calc-skala-report',
@@ -11,6 +13,7 @@ import { CalcSkalaService } from 'src/app/services/calc-skala/calc-skala.service
 
 export class CalcSkalaReportComponent implements OnInit, OnDestroy {
    public onClearSubscription: any;
+   public onInfoSubscription: any;
 
    public classifications = CLASSIFICATION;
    public grades = [];
@@ -27,7 +30,9 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
    }
 
    ngOnInit(): void {
-      this.onClearSubscription = this.service.onClear.subscribe(() => this.clear());
+      this.onClearSubscription = this.service.onClear.pipe(filter(val => val === 'report')).subscribe(() => this.clear());
+      this.onInfoSubscription = this.service.onInfo.pipe(filter(val => val === 'report')).subscribe(() => this.info());
+
       for (let itr = 0; itr <= 30; itr++) {
          this.grades.push(itr);
       }
@@ -35,6 +40,7 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
 
    ngOnDestroy(): void {
       this.onClearSubscription.unsubscribe();
+      this.onInfoSubscription.unsubscribe();
    }
 
    calcAHS(): string {
@@ -45,6 +51,16 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
    calcStd(): string {
       const grade = this.service.calcStdReport(this.g4, this.g3, this.g2, this.g1, this.g0);
       return grade ? grade.value : '';
+   }
+
+   info(): void {
+      this.dialog.open(InfoSkalaComponent, {
+         width: '680px',
+         data: {
+            gradeInfoAHS: [],
+            gradeInfoStd: []
+         }
+      });
    }
 
    clear(): void {

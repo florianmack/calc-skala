@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { filter } from 'rxjs/operators';
 import { CLASSIFICATION, GRADEINFO_AHS, GRADEINFO_STD, GRADES } from 'src/app/services/calc-skala/calc-skala';
 import { CalcSkalaService } from 'src/app/services/calc-skala/calc-skala.service';
 import { InfoSkalaComponent } from '../info-skala/info-skala.component';
@@ -28,8 +29,8 @@ export class CalcSkalaTestComponent implements OnInit, OnDestroy {
    }
 
    ngOnInit(): void {
-      this.onClearSubscription = this.service.onClear.subscribe(() => this.clear());
-      this.onInfoSubscription = this.service.onInfo.subscribe(() => this.info());
+      this.onClearSubscription = this.service.onClear.pipe(filter(val => val === 'test')).subscribe(() => this.clear());
+      this.onInfoSubscription = this.service.onInfo.pipe(filter(val => val === 'test')).subscribe(() => this.info());
    }
 
    ngOnDestroy(): void {

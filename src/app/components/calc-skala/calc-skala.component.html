@@ -5,7 +5,7 @@
       <mat-icon>info</mat-icon>
    </button>
 </mat-toolbar>
-<mat-tab-group mat-align-tabs="start">
+<mat-tab-group mat-align-tabs="start" (selectedIndexChange)="selectedIndexChange($event)">
    <mat-tab label="Schularbeit">
       <app-calc-skala-test></app-calc-skala-test>
    </mat-tab>

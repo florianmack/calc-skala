@@ -5,8 +5,8 @@ import { KeyValue } from './calc-skala';
 
 @Injectable()
 export class CalcSkalaService {
-   public onClear = new EventEmitter();
-   public onInfo = new EventEmitter();
+   public onClear = new EventEmitter<string>();
+   public onInfo = new EventEmitter<string>();
 
    constructor(private testService: CalcSkalaTestService,
                private reportService: CalcSkalaReportService) {
