@@ -5,6 +5,8 @@
 }
 
 .mat-toolbar {
+   display: flex;
+   flex-direction: row;
    z-index: 2;
 }
 
