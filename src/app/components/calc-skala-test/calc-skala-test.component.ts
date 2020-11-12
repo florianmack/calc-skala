@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { filter } from 'rxjs/operators';
-import { CLASSIFICATION, GRADEINFO_AHS, GRADEINFO_STD, GRADES } from 'src/app/services/calc-skala/calc-skala';
+import { CLASSIFICATION, TEST_GRADEINFO_AHS, TEST_GRADEINFO_STD, GRADES } from 'src/app/services/calc-skala/calc-skala';
 import { CalcSkalaService } from 'src/app/services/calc-skala/calc-skala.service';
 import { InfoSkalaComponent } from '../info-skala/info-skala.component';
 
@@ -52,8 +52,8 @@ export class CalcSkalaTestComponent implements OnInit, OnDestroy {
       this.dialog.open(InfoSkalaComponent, {
          width: '680px',
          data: {
-            gradeInfoAHS: GRADEINFO_AHS,
-            gradeInfoStd: GRADEINFO_STD
+            gradeInfoAHS: TEST_GRADEINFO_AHS,
+            gradeInfoStd: TEST_GRADEINFO_STD
          }
       });
    }

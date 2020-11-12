@@ -29,7 +29,7 @@ export const FINALGRADES: KeyValue[] = [
    { key: 5, value: 'Nicht Genügend' }
 ];
 
-export const GRADEINFO_AHS: GradeInfo[] = [
+export const TEST_GRADEINFO_AHS: GradeInfo[] = [
    {
       grade: 'Sehr gut',
       descr: [
@@ -60,18 +60,12 @@ export const GRADEINFO_AHS: GradeInfo[] = [
    {
       grade: 'Nicht Genügend',
       descr: [
-         'Zweimal 1.0 - der Rest mindestens 2.0 oder höher',
-         'Dreimal 1.0 - der Rest mindestens 3.0 oder höher',
-         'Einmal 0.0 - der Rest mindestens 2.0 oder höher',
-         'Einmal 0.0 - einmal 1.0 – der Rest 2.0 oder höher',
-         'Dreimal 1.0 – einmal 2.0',
-         'Viermal 1.0',
-         'Die Hälfte der Aufgaben ist 0.0'
+         'Alle anderen Kombinationen'
       ]
    }
 ];
 
-export const GRADEINFO_STD: GradeInfo[] = [
+export const TEST_GRADEINFO_STD: GradeInfo[] = [
    {
       grade: 'Sehr gut',
       descr: [
@@ -108,7 +102,88 @@ export const GRADEINFO_STD: GradeInfo[] = [
    {
       grade: 'Nicht Genügend',
       descr: [
-         'Die Hälfte der Aufgaben ist 0.0'
+         'Alle anderen Kombinationen'
+      ]
+   }
+];
+
+export const REPORT_GRADEINFO_AHS: GradeInfo[] = [
+   {
+      grade: 'Sehr gut',
+      descr: [
+         'Mindestens 50% 4.0, der Rest nicht weniger als 3.0',
+         'Mehr als 50% 4.0, höchstens 7% 2.0, kein 1.0, kein 0.0'
+      ]
+   },
+   {
+      grade: 'Gut',
+      descr: [
+         'Mindestens 75% 3.0 oder 4.0, der Rest nicht weniger als 2.0',
+         'Mehr als 75% 3.0 oder 4.0, höchstens 7% 1.0, kein 0.0'
+      ]
+   },
+   {
+      grade: 'Befriedigend',
+      descr: [
+         'Mindestens 50% 3.0 oder 4.0, der Rest nicht weniger als 2.0',
+         'Mindestens 75% 3.0 oder 4.0, der Rest nicht weniger als 1.0',
+         'Mehr als 75% 3.0 oder 4.0, höchstens 7% 0.0'
+      ]
+   },
+   {
+      grade: 'Genügend',
+      descr: [
+         'Mindestens 50% 3.0 oder 4.0, der Rest nicht weniger als 1.0',
+         'Mindestens 75% 2.0 oder höher, Rest nicht weniger als 1.0',
+         'Mehr als 75% 2.0 oder höher, höchstens 7% 0.0'
+      ]
+   },
+   {
+      grade: 'Nicht Genügend',
+      descr: [
+         'Alle anderen Kombinationen'
+      ]
+   }
+];
+
+export const REPORT_GRADEINFO_STD: GradeInfo[] = [
+   {
+      grade: 'Sehr gut',
+      descr: [
+         'Mindestens 50% 4.0, der Rest nicht weniger als 3.0',
+         'Mehr als 50% 4.0, höchstens 7% 2.0, kein 1.0, kein 0.0',
+         'Mindestens 75% 3.0 oder 4.0, der Rest nicht weniger als 2.0',
+         'Mehr als 75% 3.0 oder 4.0, höchstens 7% 1.0, kein 0.0',
+         'Mindestens 50% 3.0 oder 4.0, der Rest nicht weniger als 2.0',
+         'Mindestens 75% 3.0 oder 4.0, der Rest nicht weniger als 1.0',
+         'Mehr als 75% 3.0 oder 4.0, höchstens 7% 0.0'
+      ]
+   },
+   {
+      grade: 'Gut',
+      descr: [
+         'Mindestens 50% 3.0 oder 4.0, der Rest nicht weniger als 1.0',
+         'Mindestens 75% 2.0 oder höher, Rest nicht weniger als 1.0',
+         'Mehr als 75% 2.0 oder höher, höchstens 7% 0.0'
+      ]
+   },
+   {
+      grade: 'Befriedigend',
+      descr: [
+         'Mindestens 50% 2.0 oder höher, Rest nicht weniger als 1.0',
+         'Mindestens 75% 2.0 oder höher'
+      ]
+   },
+   {
+      grade: 'Genügend',
+      descr: [
+         'Mindestens 75% 1.0 oder höher'
+      ]
+   },
+   {
+      grade: 'Nicht Genügend',
+      descr: [
+         'Alle anderen Kombinationen'
       ]
    }
 ];

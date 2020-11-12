@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { filter } from 'rxjs/operators';
-import { CLASSIFICATION } from 'src/app/services/calc-skala/calc-skala';
+import { CLASSIFICATION, REPORT_GRADEINFO_AHS, REPORT_GRADEINFO_STD } from 'src/app/services/calc-skala/calc-skala';
 import { CalcSkalaService } from 'src/app/services/calc-skala/calc-skala.service';
 import { InfoSkalaComponent } from '../info-skala/info-skala.component';
 
@@ -57,8 +57,8 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
       this.dialog.open(InfoSkalaComponent, {
          width: '680px',
          data: {
-            gradeInfoAHS: [],
-            gradeInfoStd: []
+            gradeInfoAHS: REPORT_GRADEINFO_AHS,
+            gradeInfoStd: REPORT_GRADEINFO_STD
          }
       });
    }

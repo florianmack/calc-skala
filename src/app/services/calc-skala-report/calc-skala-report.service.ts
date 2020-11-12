@@ -51,14 +51,14 @@ export class CalcSkalaReportService {
       // Mindestens 50% 4.0, der Rest nicht weniger als 3.0
       return (this.precent(cnt, g4) >= 0.5 && g2 === 0 && g1 === 0 && g0 === 0) ||
          // Mehr als 50% 4.0, höchstens 7% 2.0, kein 1.0, kein 0.0
-         (this.precent(cnt, g4) > 0.5 && this.precent(cnt, g2) <= 0.7 && g1 === 0 && g0 === 0);
+         (this.precent(cnt, g4) > 0.5 && this.precent(cnt, g2) <= 0.07 && g1 === 0 && g0 === 0);
    }
 
    private calcGutAHS(cnt: number, g4: number, g3: number, g2: number, g1: number, g0: number): boolean {
       // Mindestens 75% 3.0 oder 4.0, der Rest nicht weniger als 2.0
       return (this.precent(cnt, g4, g3) >= 0.75 && g1 === 0 && g0 === 0) ||
-         // Mehr als 50% 3.0 oder 4.0, höchstens 7% 1.0, kein 0.0
-         (this.precent(cnt, g4, g3) > 0.5 && this.precent(cnt, g1) <= 0.7 && g0 === 0);
+         // Mehr als 75% 3.0 oder 4.0, höchstens 7% 1.0, kein 0.0
+         (this.precent(cnt, g4, g3) > 0.75 && this.precent(cnt, g1) <= 0.07 && g0 === 0);
    }
 
    private calcBefriedigendAHS(cnt: number, g4: number, g3: number, g2: number, g1: number, g0: number): boolean {
@@ -66,8 +66,8 @@ export class CalcSkalaReportService {
       return (this.precent(cnt, g4, g3) >= 0.5 && g1 === 0 && g0 === 0) ||
          // Mindestens 75% 3.0 oder 4.0, der Rest nicht weniger als 1.0
          (this.precent(cnt, g4, g3) >= 0.75 && g0 === 0) ||
-         // Mehr als 50% 3.0 oder 4.0, höchstens 7% 0.0
-         (this.precent(cnt, g4, g3) > 0.5 && this.precent(cnt, g0) <= 0.7);
+         // Mehr als 75% 3.0 oder 4.0, höchstens 7% 0.0
+         (this.precent(cnt, g4, g3) > 0.75 && this.precent(cnt, g0) <= 0.07);
    }
 
    private calcGenuegendAHS(cnt: number, g4: number, g3: number, g2: number, g1: number, g0: number): boolean {
@@ -75,8 +75,8 @@ export class CalcSkalaReportService {
       return (this.precent(cnt, g4, g3) >= 0.5 && g0 === 0) ||
          // Mindestens 75% 2.0 oder höher, Rest nicht weniger als 1.0
          (this.precent(cnt, g4, g3, g2) >= 0.75 && g0 === 0) ||
-         // Mehr als 50% 2.0 oder höher, höchstens 7% 0.0
-         (this.precent(cnt, g4, g3, g2) > 0.5 && this.precent(cnt, g0) <= 0.7);
+         // Mehr als 75% 2.0 oder höher, höchstens 7% 0.0
+         (this.precent(cnt, g4, g3, g2) > 0.75 && this.precent(cnt, g0) <= 0.07);
    }
 
    private calcBefriedigendStd(cnt: number, g4: number, g3: number, g2: number, g1: number, g0: number): boolean {
