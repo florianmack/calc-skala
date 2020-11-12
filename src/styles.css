@@ -3,7 +3,13 @@ html {
 }
 
 body {
-   height: 100%;
+   /* mobile viewport bug fix */
+   height: 100vh;
+   /* WebKit-based browsers will ignore this. */
+   height: -moz-available;
+   /* Mozilla-based browsers will ignore this. */
+   height: -webkit-fill-available;
+   height: stretch;
    margin: 0;
    font-family: Roboto, "Helvetica Neue", sans-serif;
    background-color: #fafafa;

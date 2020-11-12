@@ -1,13 +1,7 @@
 :host {
    display: flex;
    flex-direction: column;
-   /* mobile viewport bug fix */
-   height: 100vh;
-   /* WebKit-based browsers will ignore this. */
-   height: -moz-available;
-   /* Mozilla-based browsers will ignore this. */
-   height: -webkit-fill-available;
-   height: stretch;
+   height: 100%;
 }
 
 .mat-toolbar {
