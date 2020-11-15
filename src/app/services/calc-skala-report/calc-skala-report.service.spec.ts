@@ -1,15 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-
-import { CalcSkalaService } from '../calc-skala/calc-skala.service';
+import { CalcSkalaReportService } from './calc-skala-report.service';
 
 describe('CalcSkalaService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CalcSkalaService]
+      providers: [CalcSkalaReportService]
     });
   });
 
-  it('should be created', inject([CalcSkalaService], (service: CalcSkalaService) => {
+  it('should be created', inject([CalcSkalaReportService], (service: CalcSkalaReportService) => {
     expect(service).toBeTruthy();
   }));
 });

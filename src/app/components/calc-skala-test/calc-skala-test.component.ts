@@ -43,8 +43,8 @@ export class CalcSkalaTestComponent implements OnInit, OnDestroy {
       return grade ? grade.value : '';
    }
 
-   calcStd(): string {
-      const grade = this.service.calcStdTest([this.g1, this.g2, this.g3, this.g4]);
+   calcSTD(): string {
+      const grade = this.service.calcSTDTest([this.g1, this.g2, this.g3, this.g4]);
       return grade ? grade.value : '';
    }
 
@@ -53,7 +53,7 @@ export class CalcSkalaTestComponent implements OnInit, OnDestroy {
          width: '680px',
          data: {
             gradeInfoAHS: TEST_GRADEINFO_AHS,
-            gradeInfoStd: TEST_GRADEINFO_STD
+            gradeInfoSTD: TEST_GRADEINFO_STD
          }
       });
    }

@@ -16,15 +16,15 @@ export class CalcSkalaService {
       return this.testService.calcAHS(g);
    }
 
-   public calcStdTest(g: number[]): KeyValue {
-      return this.testService.calcStd(g);
+   public calcSTDTest(g: number[]): KeyValue {
+      return this.testService.calcSTD(g);
    }
 
    public calcAHSReport(g4: number, g3: number, g2: number, g1: number, g0: number): KeyValue {
       return this.reportService.calcAHS(g4, g3, g2, g1, g0);
    }
 
-   public calcStdReport(g4: number, g3: number, g2: number, g1: number, g0: number): KeyValue {
-      return this.reportService.calcStd(g4, g3, g2, g1, g0);
+   public calcSTDReport(g4: number, g3: number, g2: number, g1: number, g0: number): KeyValue {
+      return this.reportService.calcSTD(g4, g3, g2, g1, g0);
    }
 }

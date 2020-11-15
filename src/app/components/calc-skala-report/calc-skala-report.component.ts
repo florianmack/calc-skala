@@ -48,8 +48,8 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
       return grade ? grade.value : '';
    }
 
-   calcStd(): string {
-      const grade = this.service.calcStdReport(this.g4, this.g3, this.g2, this.g1, this.g0);
+   calcSTD(): string {
+      const grade = this.service.calcSTDReport(this.g4, this.g3, this.g2, this.g1, this.g0);
       return grade ? grade.value : '';
    }
 
@@ -58,7 +58,7 @@ export class CalcSkalaReportComponent implements OnInit, OnDestroy {
          width: '680px',
          data: {
             gradeInfoAHS: REPORT_GRADEINFO_AHS,
-            gradeInfoStd: REPORT_GRADEINFO_STD
+            gradeInfoSTD: REPORT_GRADEINFO_STD
          }
       });
    }

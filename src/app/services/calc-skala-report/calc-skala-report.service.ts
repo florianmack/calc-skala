@@ -24,7 +24,7 @@ export class CalcSkalaReportService {
       return undefined;
    }
 
-   public calcStd(g4: number, g3: number, g2: number, g1: number, g0: number): KeyValue {
+   public calcSTD(g4: number, g3: number, g2: number, g1: number, g0: number): KeyValue {
       if (!Number.isFinite(g4) || !Number.isFinite(g3) || !Number.isFinite(g2) || !Number.isFinite(g1) || !Number.isFinite(g0)) {
          return undefined;
       }
@@ -36,9 +36,9 @@ export class CalcSkalaReportService {
             return FINALGRADES.find(item => item.key === 1);
          } else if (this.calcGenuegendAHS(cnt, g4, g3, g2, g1, g0)) {
             return FINALGRADES.find(item => item.key === 2);
-         } else if (this.calcBefriedigendStd(cnt, g4, g3, g2, g1, g0)) {
+         } else if (this.calcBefriedigendSTD(cnt, g4, g3, g2, g1, g0)) {
             return FINALGRADES.find(item => item.key === 3);
-         } else if (this.calcGenuegendStd(cnt, g4, g3, g2, g1, g0)) {
+         } else if (this.calcGenuegendSTD(cnt, g4, g3, g2, g1, g0)) {
             return FINALGRADES.find(item => item.key === 4);
          } else {
             return FINALGRADES.find(item => item.key === 5);
@@ -79,14 +79,14 @@ export class CalcSkalaReportService {
          (this.precent(cnt, g4, g3, g2) > 0.75 && this.precent(cnt, g0) <= 0.07);
    }
 
-   private calcBefriedigendStd(cnt: number, g4: number, g3: number, g2: number, g1: number, g0: number): boolean {
+   private calcBefriedigendSTD(cnt: number, g4: number, g3: number, g2: number, g1: number, g0: number): boolean {
       // Mindestens 50% 2.0 oder höher, Rest nicht weniger als 1.0
       return (this.precent(cnt, g4, g3, g2) >= 0.5 && g0 === 0) ||
          // Mindestens 75% 2.0 oder höher
          (this.precent(cnt, g4, g3, g2) >= 0.75);
    }
 
-   private calcGenuegendStd(cnt: number, g4: number, g3: number, g2: number, g1: number, g0: number): boolean {
+   private calcGenuegendSTD(cnt: number, g4: number, g3: number, g2: number, g1: number, g0: number): boolean {
       // Mindestens 75% 1.0 oder höher
       return this.precent(cnt, g4, g3, g2, g1) >= 0.75;
    }
