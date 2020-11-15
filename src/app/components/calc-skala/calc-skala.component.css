@@ -16,6 +16,11 @@
    flex: 1 1 auto;
 }
 
+.btn-info {
+   display: flex;
+   justify-content: center;
+}
+
 .btn-delete {
    position: absolute;
    bottom: 20px;
